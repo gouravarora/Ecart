@@ -1,0 +1,6 @@
+<div class="container">
+    <app-item
+        [productData]="item"
+        *ngFor="let item of products; let i = index"
+        (step)="dispatchStep($event)"></app-item>
+</div>

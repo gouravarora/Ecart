@@ -1,0 +1,25 @@
+<!-- Here is the structer for the product -->
+<div class="card item">
+	<div class="card-title">{{ productData.name }}</div>
+    <div class="card-body">
+    	<div class="product-details">
+        	<div class="price">
+            	{{ productData.price }}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button (click)="addToCart()" *ngIf="!productData.added; else steeper">Add to cart</button>
+        <ng-template class="steeper" #steeper>
+            <button class="dec" (click)="dispatchDec()">
+                -
+            </button>
+            <span>
+                {{ productData.quantity }}
+            </span>
+            <button class="dec" (click)="dispatchInc()">
+                +
+            </button>
+        </ng-template>
+    </div>
+</div>
